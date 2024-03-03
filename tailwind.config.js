@@ -8,6 +8,9 @@ module.exports = {
         extend: {
             "sans": ["din-2014"]
         },
+        colors: {
+            "catenarysea": "#0a223e"
+        },
         keyframes: {
             'accordion-down': {
                 from: { height: 0 },

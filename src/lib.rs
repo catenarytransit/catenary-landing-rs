@@ -1,6 +1,9 @@
 pub mod app;
 leptos_i18n::load_locales!();
 
+pub mod navbar;
+use navbar::*;
+
 #[cfg(feature = "hydrate")]
 #[wasm_bindgen::prelude::wasm_bindgen]
 pub fn hydrate() {
