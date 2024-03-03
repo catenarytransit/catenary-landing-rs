@@ -56,7 +56,7 @@ fn Footer() -> impl IntoView {
     let i18n = use_i18n();
 
     view! {
-    <div class="w-full catenary-sea text-white px-8 py-4 text-sm  mt-auto">
+    <div class="w-full  px-8 py-4 text-sm  mt-auto">
         
     </div>
     }
@@ -78,11 +78,11 @@ fn HomePage() -> impl IntoView {
         <Title text={t!(i18n, title)}/>
         // sets the document title
         <div
-        class="catenary-sea flex flex-col h-full"
+        class="bg-white dark:bg-catenarysea flex flex-col h-full"
         >
 
         <div class="w-full">
-        <div class="catenary-sea">
+        <div class="bg-white dark:bg-catenarysea">
         <Navbar
         />
 
@@ -180,7 +180,7 @@ fn Navbar() -> impl IntoView {
                         <li class="md:order-2">
                             <a
                                 href="https://maps.catenarymaps.org"
-                                class="px-4 py-3 flex flex-row flex-grow-0 align-middle dark:text-white bg-[#141414] hover:bg-gray-800 ml-4"
+                                class="px-4 py-3 flex flex-row flex-grow-0 align-middle bg-slate-200 hover:bg-slate-300 dark:text-white dark:bg-[#141414] dark:hover:bg-gray-800 ml-4"
                             >
                                 <span>{t!(i18n,launchmaps)}</span>
                                 <svg
