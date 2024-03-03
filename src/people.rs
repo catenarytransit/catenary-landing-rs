@@ -38,6 +38,22 @@ lazy_static! {
             name_languages:: uci_langs
         }
     }
+
+    static ref USC: School = {
+        let mut names = HashMap::new();
+
+        names.insert(Locale::en, "University of California, Irvine");
+        names.insert(Locale::zh, "加利福尼亞大學爾灣分校");
+        names.insert(Locale::zh_TW, "加利福尼亞大學爾灣分校");
+        names.insert(Locale::ko, "서던캘리포니아 대학교");
+        names.insert(Locale::fr, "Université de Californie à Irvine");
+        names.insert(Locale::es, "Universidad de California en Irvine");
+
+        School {
+            default_name: String::from("University of California, Irvine"),
+            name_languages:: uci_langs
+        }
+    }
 }
 
 #[component]

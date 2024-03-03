@@ -82,7 +82,7 @@ fn HomePage() -> impl IntoView {
         </div>
 
         </div>
-       
+        
         </div>
         <Footer/>
         </div>
