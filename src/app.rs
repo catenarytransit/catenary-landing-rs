@@ -14,10 +14,11 @@ pub fn App() -> impl IntoView {
     view! {
             // injects a stylesheet into the document <head>
             // id=leptos means cargo-leptos will hot-reload this stylesheet
+            
+
+            <Html class=move || if darkmode.is_dark() { "dark" } else { "" }/>
             <Stylesheet id="leptos" href="/pkg/catenarylanding.css"/>
             <Stylesheet href="https://use.typekit.net/nhx0pgc.css"/>
-
-            
 
             // content for this welcome page
             <Router>
@@ -56,7 +57,7 @@ fn Footer() -> impl IntoView {
 
     view! {
     <div class="w-full catenary-sea text-white px-8 py-4 text-sm  mt-auto">
-
+        
     </div>
     }
 }
@@ -75,8 +76,6 @@ fn HomePage() -> impl IntoView {
     view! {
 
         <Title text={t!(i18n, title)}/>
-
-        <Html lang="en" class=move || if darkmode.is_dark() { "dark" } else { "" }/>
         // sets the document title
         <div
         class="catenary-sea flex flex-col h-full"
@@ -89,10 +88,12 @@ fn HomePage() -> impl IntoView {
 
         <div>
         
-        <div>
+        <div class="mt-32">
         <h1><span>"Catenary helps "</span><span>"connect"</span><span>" people and communities."</span></h1>
         </div>
-
+            {
+                move || if darkmode.is_dark() { "dark mode" } else { "light mode" }
+            }
         </div>
 
         </div>
@@ -144,7 +145,7 @@ fn Navbar() -> impl IntoView {
 
     leptos_meta::provide_meta_context();
 
-    let mut darkmode = expect_context::<Darkmode>();
+    //let mut darkmode = expect_context::<Darkmode>();
 
     provide_i18n_context();
 
@@ -154,7 +155,7 @@ fn Navbar() -> impl IntoView {
 
     view! {
         <header
-        class="fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out bg-background backdrop-blur-sm shadow-lg"
+        class="w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out bg-background backdrop-blur-sm shadow-lg"
     >
         <div class="max-w-6xl mx-auto px-5 sm:px-6">
             <div class="flex items-center justify-between h-16 md:h-20">
@@ -163,7 +164,7 @@ fn Navbar() -> impl IntoView {
                         <span class="text-[1.3em]">
                             <img
                                 src="/assets/images/favicon.png"
-                                class="logoLight inline-block mr-4"
+                                class="inline-block mr-4"
                                 alt={"Catenary Logo"}
                                 width={50}
                                 height={30}
@@ -179,11 +180,11 @@ fn Navbar() -> impl IntoView {
                         <li class="md:order-2">
                             <a
                                 href="https://maps.catenarymaps.org"
-                                class="btn-sm text-foreground bg-secondary hover:bg-tertiary ml-4"
+                                class="px-4 py-3 flex flex-row flex-grow-0 align-middle dark:text-white bg-[#141414] hover:bg-gray-800 ml-4"
                             >
                                 <span>{t!(i18n,launchmaps)}</span>
                                 <svg
-                                    class="w-3 h-3 fill-current text-muted-foreground shrink-0 ml-2 -mr-1"
+                                    class="w-3 h-3 fill-current text-gray-900 dark:text-gray-300 my-auto shrink-0 ml-2 -mr-1"
                                     viewBox="0 0 12 12"
                                     xmlns="http://www.w3.org/2000/svg"
                                 >
