@@ -2,6 +2,7 @@ use crate::i18n::*;
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
+use leptos_darkmode::Darkmode;
 
 #[component]
 pub fn App() -> impl IntoView {
