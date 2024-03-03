@@ -5,11 +5,13 @@ module.exports = {
     },
     darkMode: "class",
     theme: {
-        extend: {
-            "sans": ["din-2014"]
+        fontFamily: {
+            "sans": ["din-2014"],
         },
+        extend: {
         colors: {
             "catenarysea": "#0a223e"
+        },
         },
         keyframes: {
             'accordion-down': {

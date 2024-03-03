@@ -26,6 +26,7 @@ qstring = "0.7.2"
 reqwest = "0.11.24"
 stylers = "0.3.2"
 leptos_darkmode = "0.2"
+lazy_static = "1.4.0"
 
 
 [features]
@@ -123,4 +124,4 @@ watch-additional-files = ["locales"]
 
 [package.metadata.leptos-i18n]
 default = "en"
-locales = ["en", "ko", "zh", "zh-TW"]
+locales = ["en", "fr", "es", "ko", "zh", "zh-TW"]

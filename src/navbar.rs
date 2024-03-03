@@ -44,7 +44,7 @@ pub fn Navbar() -> impl IntoView {
                         <li class="md:order-2">
                             <a
                                 href="https://maps.catenarymaps.org"
-                                class="px-4 py-3 flex flex-row flex-grow-0 align-middle bg-slate-200 hover:bg-slate-300 dark:text-white dark:bg-[#141414] dark:text-white dark:hover:bg-gray-800 ml-4"
+                                class="px-4 py-3 flex flex-row flex-grow-0 align-middle bg-slate-200 hover:bg-slate-300 text-black dark:text-white dark:bg-[#141414] dark:hover:bg-gray-800 ml-4"
                             >
                                 <span>{t!(i18n,launchmaps)}</span>
                                 <svg

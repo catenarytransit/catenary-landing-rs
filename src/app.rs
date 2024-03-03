@@ -37,21 +37,6 @@ pub fn App() -> impl IntoView {
 }
 
 #[component]
-fn Nav() -> impl IntoView {
-    leptos_meta::provide_meta_context();
-
-    provide_i18n_context();
-
-    let i18n = use_i18n();
-
-    view! {
-        <div class="flex flex-row">
-            <div>"Catenary Maps"</div>
-        </div>
-    }
-}
-
-#[component]
 fn Footer() -> impl IntoView {
     leptos_meta::provide_meta_context();
     provide_i18n_context();
@@ -93,9 +78,7 @@ fn HomePage() -> impl IntoView {
         <div class="mt-32">
         <h1><span>"Catenary helps "</span><span>"connect"</span><span>" people and communities."</span></h1>
         </div>
-            {
-                move || if darkmode.is_dark() { "dark mode" } else { "light mode" }
-            }
+            
         </div>
 
         </div>

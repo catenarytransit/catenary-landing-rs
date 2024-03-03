@@ -518,6 +518,7 @@ dependencies = [
  "fluent-templates",
  "futures",
  "http 1.0.0",
+ "lazy_static",
  "leptos",
  "leptos-fluent",
  "leptos_actix",
