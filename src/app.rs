@@ -7,12 +7,17 @@ use leptos_darkmode::Darkmode;
 #[component]
 pub fn App() -> impl IntoView {
     // Provides context that manages stylesheets, titles, meta tags, etc.
+    provide_meta_context();
+    
+    let darkmode = Darkmode::init();
 
     view! {
             // injects a stylesheet into the document <head>
             // id=leptos means cargo-leptos will hot-reload this stylesheet
-            <Stylesheet id="leptos" href="/pkg/kylerchinmusic.css"/>
+            <Stylesheet id="leptos" href="/pkg/catenarylanding.css"/>
             <Stylesheet href="https://use.typekit.net/nhx0pgc.css"/>
+
+            
 
             // content for this welcome page
             <Router>
@@ -65,7 +70,7 @@ fn HomePage() -> impl IntoView {
 
     let i18n = use_i18n();
 
-    let darkmode = Darkmode::init();
+    let mut darkmode = expect_context::<Darkmode>();
 
     view! {
 
@@ -80,7 +85,6 @@ fn HomePage() -> impl IntoView {
         <div class="w-full">
         <div class="catenary-sea">
         <Navbar
-        white_text={true}
         />
 
         <div>
@@ -136,9 +140,11 @@ fn PickTranslation(set_opened: WriteSignal<bool>) -> impl IntoView {
 }
 
 #[component]
-fn Navbar(white_text: bool) -> impl IntoView {
+fn Navbar() -> impl IntoView {
 
     leptos_meta::provide_meta_context();
+
+    let mut darkmode = expect_context::<Darkmode>();
 
     provide_i18n_context();
 
@@ -148,7 +154,7 @@ fn Navbar(white_text: bool) -> impl IntoView {
 
     view! {
         <header
-        class="fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out bg-background backdrop-blur-sm shadow-lg text-white"
+        class="fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out bg-background backdrop-blur-sm shadow-lg"
     >
         <div class="max-w-6xl mx-auto px-5 sm:px-6">
             <div class="flex items-center justify-between h-16 md:h-20">
@@ -162,7 +168,7 @@ fn Navbar(white_text: bool) -> impl IntoView {
                                 width={50}
                                 height={30}
                             />
-                            "Catenary"
+                            <span class="text-black dark:text-white">"Catenary"</span>
                         </span>
                     </a>
                 </div>
